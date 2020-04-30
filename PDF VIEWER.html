@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title>PDF Viewer</title>
+    <style>
+      body{
+  margin:0;
+}
+.top-bar{
+  width:100%;
+      background: #1e1f26;
+  border-bottom: 1px solid #444857;
+  padding: 10px 0;
+
+}
+input.url{
+    font-size: 20px;
+    width: 70%;
+    margin: 0 10%;
+  padding:10px;
+      background: #444857;
+  border-radius:4px;
+  border:none;
+    color:white;
+      -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+iframe {
+ height: calc(100% - 65px);
+  width:100%
+}
+    </style>
+  </head>
+  <body>
+    <div class="top-bar">
+      <input type="text" class="url" id="url" placeholder="Type the URL" onkeyup="myFunction2(this.value)">
+
+    </div>
+    <div class="frame-body">
+      <iframe id="frame" src="" frameborder="0" width="100%"></iframe>
+    </div>
+    <script>
+      function myFunction2(value) {
+    document.getElementById('frame').src = "https://docs.google.com/viewerng/viewer?url=" + value;
+};
+    </script>
+  </body>
+</html>
